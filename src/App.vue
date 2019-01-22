@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Xheader></Xheader>
+    <Banner></Banner>
+    <Links></Links>
+    <Xpicture></Xpicture>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Xheader from './components/common/Xheader.vue'
+import Banner from './page/home/Banner.vue'
+import Links from './page/home/Links.vue'
+import Xpicture from './page/home/Xpicture.vue'
+
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Xheader,
+    Banner,
+    Links,
+    Xpicture
   }
 }
 </script>
