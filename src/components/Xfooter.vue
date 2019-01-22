@@ -1,31 +1,11 @@
 <template>
   <div class="mobile-footernav">
     <ul>
-      
       <li v-for="(item,idx) in data" :key="idx" @click="changechannel(idx)" class="footernav-index-li footernav-li">
-        
         <router-link :to="`/app${item.link}`"  :id=" `${item.class}`" :class="{'active':idx == txt}">
           <div v-text="item.channel"></div>
         </router-link>
-        
       </li>
-      
-      <!-- <li class="footernav-classs-li footernav-li">
-        <a href="/products" class="footernav-class">
-          <div>分类列表</div>
-        </a>
-      </li>
-      <li class="footernav-cart-li footernav-li">
-        <a href="/cart" class="footernav-cart">
-          <span id="yhsd_topCart_quantityTitle">0</span>
-          <div>购物车</div>
-        </a>
-      </li>
-      <li class="footernav-account-li footernav-li">
-        <a href="/account" class="footernav-account">
-          <div>我</div>
-        </a>
-      </li>-->
     </ul>
   </div>
 </template>
@@ -37,26 +17,22 @@ export default {
         {
           link:"/home",
           class: 'footernav-index',
-          channel:"首页",
-          bck:'url("//asset.ibanquan.com/asset/5a32190422bd3406c000224a/mobi_menu_icon1?design_theme_id=0&v=1513232644")'
+          channel:"首页"
         },
         {
           link: "/list",
           class: 'footernav-class',
-          channel:"分类列表",
-          bck:'url("//asset.ibanquan.com/asset/5a32190322bd3406c0002244/mobi_menu_icon2?design_theme_id=0&v=1513232643")'
+          channel:"分类列表"
         },
         {
           link: "/emportCar",
           class: 'footernav-cart',
-          channel:"购物车",
-          bck:'url("//asset.ibanquan.com/asset/5a32190322bd3406c000223e/mobi_menu_icon3?design_theme_id=0&v=1513232643")'
+          channel:"购物车"
         },
         {
           link:"/mine",
           class: 'footernav-account',
           channel:"我",
-          bck:'url("//asset.ibanquan.com/asset/5a32190222bd3406c0002238/mobi_menu_icon4?design_theme_id=0&v=1513232643")'
         }
       ],
       txt:0
@@ -164,13 +140,13 @@ export default {
 .mobile-footernav #footernav-index.active {
   background-image: url("//asset.ibanquan.com/asset/5a32190422bd3406c0002247/mobi_menu_icon1_active?design_theme_id=0&v=1513232644");
 }
-.mobile-footernav #footernav-classs.active {
+.mobile-footernav #footernav-class.active {
   background-image: url("//asset.ibanquan.com/asset/5a32190322bd3406c0002241/mobi_menu_icon2_active?design_theme_id=0&v=1513232643");
 }
 .mobile-footernav #footernav-cart.active {
   background-image: url("//asset.ibanquan.com/asset/5a32190322bd3406c000223b/mobi_menu_icon3_active?design_theme_id=0&v=1513232643");
 }
-.mobile-footernav #footernav-accountactive {
+.mobile-footernav #footernav-account.active {
   background-image: url("//asset.ibanquan.com/asset/5a32190222bd3406c0002235/mobi_menu_icon4_active?design_theme_id=0&v=1513232642");
 }
 
