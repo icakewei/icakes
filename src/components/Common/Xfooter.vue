@@ -17,17 +17,17 @@ export default {
         {
           link:"/home",
           class: 'footernav-index',
-          channel:"首页"
+          channel:"首页",
         },
         {
-          link: "/list",
+          link: "/good",
           class: 'footernav-class',
-          channel:"分类列表"
+          channel:"分类列表",
         },
         {
           link: "/emportCar",
           class: 'footernav-cart',
-          channel:"购物车"
+          channel:"购物车",
         },
         {
           link:"/mine",

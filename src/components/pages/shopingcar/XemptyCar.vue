@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="car">
-      <img src="../assets/@1HK03SA1UO~}189S[IX_~G.png" alt>
+      <img src="../../../assets/@1HK03SA1UO~}189S[IX_~G.png" alt>
     </div>
     <p class="txt">您的购物车还没有商品，快去挑选心爱的商品吧！</p>
     <div class="button-sp-area">

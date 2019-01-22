@@ -30,11 +30,13 @@ export default {};
 </script>
 <style scoped>
 #main{
- padding-top: 50px;
+ padding-top: 100px;
 }
 
 .weui-cell {
   background: #fff;
+  height: 30px;
+  font-size: 12px;
 }
 .page__bd {
   margin-top: 50px;
@@ -46,6 +48,8 @@ export default {};
 .zhuce {
   display: inline-block;
   padding: 10px;
+  font-size: 16px;
+  color: #333;
 }
 </style>
 

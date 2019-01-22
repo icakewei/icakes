@@ -1,36 +1,26 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './App'
 import 'weui'
-import VueRouter from 'vue-router'
-Vue.use(VueRouter)
 Vue.config.productionTip = false
-// 定义路由组件
-import XemportCar from './pages/XemptyCar.vue'
-import Xmain from './pages/Xmain.vue'
-const routes = [
-  {
-    path: '/app',
-    component: App,
-    children: [
-      {
-        path: 'mine',
-        component: Xmain
-      }, {
-        path: 'emportCar',
-        component: XemportCar
-      }
-    ]
-  },
-
-
-
-
-]
-const router = new VueRouter({
-  routes // (缩写) 相当于 routes: routes
+Vue.filter('getDate', function (value) {
+	let str = value.toString()
+	let newStr = str.substring(0,str.length-2);
+  return  newStr
 })
-
+//路由
+import  router from  './router'
+//引入全局配置样式
+// import  './styls/reset.less'
+import './styls/reset.less'
+// 引入axios  
+import  Axios from 'axios'
+Vue.prototype.$axios=Axios
+//vuex全局
+import  store from './store'
 new Vue({
+  el: '#app',
   router,
-  render: h => h(App),
-}).$mount('#app')
+  store,
+  components: { App },
+  template: '<App/>'
+})

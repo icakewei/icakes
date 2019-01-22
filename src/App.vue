@@ -1,22 +1,18 @@
 <template>
   <div id="app">
-      <!-- <Xmain></Xmain> -->
-      <Xfooter></Xfooter>
-      <router-view></router-view>
-      <!-- <XemptyCar></XemptyCar> -->
+  <Header></Header>
+  <router-view></router-view>
+	<bottom></bottom>
   </div>
 </template>
 
 <script>
-import Xfooter from './components/Xfooter.vue'
-// import Xmain from './components/Xmain.vue'
-// import XemptyCar from './components/XemptyCar.vue'
+import Header from './components/Common/Header.vue'
+import bottom from './components/Common/Xfooter.vue'
 
 export default {
   components: {
-    Xfooter,
-    // XemptyCar
-    // Xmain
+    Header,bottom
   }
 }
 </script>
