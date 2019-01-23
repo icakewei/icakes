@@ -1,4 +1,5 @@
 <template>
+<!-- 用户登录之后 my的页面 -->
     <div class='user'>    
           <ul>
             <li class="u1"><i class="fa fa-user-circle-o" aria-hidden="true"></i><span>{{name}}</span></li>

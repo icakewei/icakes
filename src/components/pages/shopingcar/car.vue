@@ -26,8 +26,8 @@
         data-amount="1"
       >
         <div class="checkbox-group checkbox-inline cart-li-lf">
-          <input type="checkbox" id="yhsdProduct_4405355" checked>
-          <label for="yhsdProduct_4405355" data-btn="checkOne-checked"></label>
+          <input type="checkbox" id="yhsdProduct" checked>
+          <label for="yhsdProduct" data-btn="checkOne-checked"></label>
         </div>
         <div class="cart-li-mid">
           <div class="cart-li-product-name">
@@ -44,7 +44,8 @@
         </div>
         <div class="cart-li-rt">
           <div class="cart-li-product-info">
-            <span class="cart-li-product-price-num">¥18.00</span><br/>
+            <span class="cart-li-product-price-num">¥18.00</span>
+            <br>
             <span class="cart-li-product-del" data-btn="delete">删除</span>
           </div>
           <div class="cart-li-product-input">
@@ -96,11 +97,11 @@
   position: absolute;
   top: 9px;
 }
-.car-list{
-    height: 128px;
-    background: #fff;
-    font-size: 14px;
-    margin-top: 5px;
+.car-list {
+  height: 128px;
+  background: #fff;
+  font-size: 14px;
+  margin-top: 5px;
 }
 .cart-li-operator {
   height: 30px;
@@ -113,35 +114,48 @@
   float: right;
   display: inline-block;
 }
-.cart-li-product-price-num{
-    font-weight: 600
+.cart-li-product-price-num {
+  font-weight: 600;
 }
-.cart-li-product-input{
-    height: 20px;
-    display: inline-block;
-    float: left;
-    width: 71px;
+.cart-li-product-input {
+  height: 25px;
+  display: inline-block;
+  float: left;
+  width: 71px;
+  margin: 66px -33px;
 }
-.cart-li-product-input a{
-        display: inline-block;
-    float: left;
-    border: 1px solid#ccc;
-    text-align: center;
-    width: 20px;
-    color: #000;
-    background: #e5e5e5
+.cart-li-product-input a {
+  display: inline-block;
+  float: left;
+  border: 1px solid#ccc;
+  text-align: center;
+  width: 20px;
+  color: #000;
+  background: #e5e5e5;
 }
-.cart-li-product-num{
-    width: 26px;
-    float: left;
-    border: 1px solid#ccc;
-    border-right: none;
-    text-align: center;
+.cart-li-product-num {
+  width: 26px;
+  float: left;
+  border: 1px solid#ccc;
+  border-right: none;
+  text-align: center;
 }
-.cart-li-product-img{
-    float: left;
+.cart-li-product-img {
+  float: left;
 }
-.cart-li-product-link{
-    float: left;
+.cart-li-product-link {
+  float: left;
+  color: #ccc;
+}
+.cart-li-product-info {
+  display: inline-block;
+  margin: 5px 8px;
+}
+.cart-li-product-del {
+  float: right;
+}
+#yhsdProduct {
+  position: absolute;
+  top: 55px;
 }
 </style>
