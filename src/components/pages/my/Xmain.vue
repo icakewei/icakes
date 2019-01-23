@@ -20,17 +20,25 @@
       <a href="javascript:;" class="weui-btn weui-btn_primary">登录</a>
     </div>
     <div class="cd">
-      <a href class="denglu">马上登陆</a>
-      <a class="zhuce" href>立即注册</a>
+      <a href class="denglu">忘记密码</a>
+      <a class="zhuce" href="Javascript:;" @click="change">立即注册</a>
     </div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  name: "Xmain",
+  components: {},
+  methods: {
+    change() {
+      this.$router.push("/app/login");
+    }
+  }
+};
 </script>
 <style scoped>
-#main{
- padding-top: 100px;
+#main {
+  padding-top: 100px;
 }
 
 .weui-cell {
@@ -48,8 +56,8 @@ export default {};
 .zhuce {
   display: inline-block;
   padding: 10px;
-  font-size: 16px;
-  color: #333;
+  font-size: 14px;
+  color: #4685ee;
 }
 </style>
 

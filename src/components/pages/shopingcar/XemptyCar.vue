@@ -5,29 +5,36 @@
     </div>
     <p class="txt">您的购物车还没有商品，快去挑选心爱的商品吧！</p>
     <div class="button-sp-area">
-      <a href="javascript:;" class="weui-btn weui-btn_plain-default weui-btn_plain-disabled">去逛逛</a>
+      <a href="javascript:;" class="weui-btn weui-btn_plain-default weui-btn_plain-disabled" @click="change">去逛逛</a>
     </div>
   </div>
 </template>
 <script>
 export default {
-    
-}
+  name: "goshop",
+  components: {},
+  methods: {
+    change() {
+      //跳转至列表页面
+      this.$router.push("/app/good");
+    }
+  }
+};
 </script>
 <style scoped>
-.car{
-    text-align: center;
-    padding-top: 50px;
+.car {
+  text-align: center;
+  padding-top: 50px;
 }
-.txt{
-    font-size: 12px;
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
+.txt {
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
 }
-.weui-btn{
-    width:100px;
-    background: #000;
-    color: #fff;
+.weui-btn {
+  width: 100px;
+  background: #000;
+  color: #fff;
 }
 </style>
