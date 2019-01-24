@@ -10,8 +10,8 @@ import App from '../App.vue'
 import Home from '../components/pages/Home/Home.vue'
 import GoodList from '../components/pages/GoodList/Good.vue'
 import mine from '../components/pages/my/Xmain.vue'
-import emportCar from '../components/pages/shopingcar/XemptyCar.vue'
-
+import emportCar from '../components/pages/shopingcar/Shopcar.vue'
+import Detail from '../components/pages/Detail/Detail.vue'
 const router = new VueRouter({
   routes: [
     {
@@ -35,11 +35,16 @@ const router = new VueRouter({
         component: mine,
         name: 'mine'
       }]
-    },//重定向
+    },
+    {
+      path: '/detail',
+      component: Detail
+    },
+    // 重定向
     {
       path: '/',
       redirect: '/app/home'
-    }
+    },
   ]
 })
 

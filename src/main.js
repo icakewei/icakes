@@ -20,7 +20,9 @@ import  store from './store'
 new Vue({
   el: '#app',
   router,
-  store,
-  components: { App },
-  template: '<App/>'
+  store, 
+  render: h => h('router-view')
+
+  // components: { App },
+  // template: '<App/>'
 })

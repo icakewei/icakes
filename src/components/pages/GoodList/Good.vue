@@ -3,9 +3,10 @@
     <div class="home_nav">
       <div class="swiper-container">
         <ul class="swiper-wrapper">
-          <li class="swiper-slide" v-for='(item,index) in navlist'
-              @click='toggle(item.path)' :id='item.path==selInit?"sel":""'>{{item.title}}</li>
-         
+          <li class="swiper-slide" v-for='(item,index) in navlist' :key="index"
+              @click='toggle(item.path)' :id='item.path==selInit?"sel":""'>{{item.title}}
+          </li>
+
         </ul>
         <i class="fa fa-caret-right jiantou" aria-hidden="true" ></i>
     <!-- Add Pagination -->
@@ -13,12 +14,12 @@
       </div>
          
   </div>
-  <div class="list">
+  <div  class="list">
     <GoodList :path="selInit"></GoodList>
     <BackTop></BackTop>
      <img src="http://asset.ibanquan.com/asset/5a32190722bd3406c000226f/footer_have_none?design_theme_id=0&v=1513232647" alt="">
   </div>
-
+<!-- to="/detail" -->
   <bottom></bottom>
    
   </div>
@@ -57,7 +58,7 @@ export default{
       },
       toggle(item){
         this.selInit = item 
-        console.log(this.selInit)
+        // console.log(this.selInit)
 
       },
       leave(){
@@ -73,9 +74,6 @@ export default{
     //   next();
     // },
     created(){
-  
-
-
         if(this.$route.params.path){
           this.selInit=this.$route.params.path;
         }else if(this.$route.params.total){
@@ -84,7 +82,7 @@ export default{
           // console.log(0)
         }else if(!this.$route.params.total){
           let storage = window.localStorage;
-          console.log(0)
+          // console.log(0)
           this.selInit=storage.getItem('tabname');
         }else{
           console.log(852)
@@ -98,7 +96,7 @@ export default{
         console.log(this.selInit)
       }else if(this.$route.params.total){
         this.selInit=this.$route.params.total;
-        // console.log(this.selInit)
+        console.log(this.selInit)
         // console.log(0)
       }else if(!this.$route.params.total){
         let storage = window.localStorage;
