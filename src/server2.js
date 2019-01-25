@@ -13,12 +13,10 @@ app.use(express.static(path.join(__dirname,'./public')))
  app.use('/admin',express.static(path.join(__dirname,'./admin')))
   //路由
   const adminRouter=require('./mongoose/src/router/admin.js')
-  // const uploadRouter=require('./src/router/upload2.js')
   const goodsRouter=require('./mongoose/src/router/goods.js')
 
-  app.use('/admin',adminRouter)
-  // app.use('/upload',uploadRouter)
-   app.use('/goods',goodsRouter)
+app.use('/admin',adminRouter)
+app.use('/goods',goodsRouter)
 app.listen(4000,()=>{
 	console.log('server start in port'+4000);
 })

@@ -34,10 +34,8 @@ export default {
     getdata(test){
       this.$axios.get('http://icak.es/api/v1/page/view?handle=front&token=9dd5934c294149a8aaba5a3540d7f709&rnd=1542705308375')
       .then( (res)=> {
-        // console.log(this.num)
         this.cakedetail = res.data.page.snippets[test.pm].products;
-        // console.log(res.data.page.snippets[test.pm].products);
-        console.log(this.cakedetail);
+        // console.log(this.cakedetail);
         Vue.nextTick(()=>{
           this.lunbo();
         })

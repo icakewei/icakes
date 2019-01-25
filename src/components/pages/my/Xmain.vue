@@ -5,7 +5,7 @@
         <label class="weui-label">帐号</label>
       </div>
       <div class="weui-cell__bd">
-        <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入帐号">
+        <input class="weui-input" type="number" placeholder="请输入帐号" v-model="email">
       </div>
     </div>
     <div class="weui-cell">
@@ -13,24 +13,104 @@
         <label class="weui-label">密码</label>
       </div>
       <div class="weui-cell__bd">
-        <input class="weui-input" type="password" pattern="[0-9]*" placeholder="请输入密码">
+        <input class="weui-input" type="password" placeholder="请输入密码" v-model="password">
       </div>
     </div>
+    <span v-text="tips" class="tips">hahah</span>
     <div class="page__bd page__bd_spacing">
-      <a href="javascript:;" class="weui-btn weui-btn_primary">登录</a>
+      <a
+        href="javascript:;"
+        class="weui-btn weui-btn_primary"
+        @click="login()"
+        :class="{'showToast': addId}"
+      >登录</a>
     </div>
     <div class="cd">
-      <a href class="denglu">马上登陆</a>
-      <a class="zhuce" href>立即注册</a>
+      <a href class="denglu">忘记密码</a>
+      <a class="zhuce" href="Javascript:;" @click="change">立即注册</a>
     </div>
+    <Toast v-show="addId"></Toast>
   </div>
 </template>
 <script>
-export default {};
+import Toast from "../../Common/Toast.vue";
+export default {
+  // pattern="[0-9]*"
+  data() {
+    return {
+      email: "",
+      password: "",
+      tips: ""
+    };
+  },
+  computed: {
+    addId() {
+      return this.$store.state.slider;
+    }
+  },
+  components: { Toast },
+  methods: {
+    change() {
+      this.$router.push("/app/login");
+    },
+    login() {
+      if (this.email == "") {
+        this.tips = "请输入用户名";
+        return 
+      }
+      if (this.password == "") {
+        this.tips = "请输入密码";
+        return 
+      }
+      if (this.password != "" && this.email != "") {
+        this.$axios
+          .post(
+            "http://localhost:3000/setting/loginUser",
+            this.$qs.stringify({
+              email: this.email,
+              password: this.password
+            })
+          )
+          .then(response => {
+            // console.log(addId)
+            console.log(response.data);
+            // if (response.data.status == "success") {
+            //   this.$store.commit("sliderShow", true);
+            //   this.$router.push("/app/home");
+            // }
+            let fn = {
+              success: async () => {
+                await this.$store.commit("sliderShow", true);
+                await setTimeout(() => {
+                  this.$store.commit("sliderShow", false);
+                }, 1000);
+                await setTimeout(() => {
+                  this.$router.push("/app/home");
+                }, 1500);
+              },
+              fail: () => {
+                this.tips = "用户名和密码不匹配"
+                return
+              }
+            };
+            fn[response.data.status]();
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+      }
+      // console.log(this.$store.state.slider)
+    }
+  }
+};
 </script>
 <style scoped>
-#main{
- padding-top: 100px;
+.tips{
+  font-size: 14px;
+  color: red;
+}
+#main {
+  padding-top: 100px;
 }
 
 .weui-cell {
@@ -48,8 +128,8 @@ export default {};
 .zhuce {
   display: inline-block;
   padding: 10px;
-  font-size: 16px;
-  color: #333;
+  font-size: 14px;
+  color: #4685ee;
 }
 </style>
 

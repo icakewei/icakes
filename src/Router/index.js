@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router';
 
-// 0. 如果使用模块化机制编程，导入Vue和VueRouter，要调用 Vue.use(VueRouter)
 Vue.use(VueRouter)
 Vue.config.productionTip = false
 import App from '../App.vue'
@@ -12,6 +11,9 @@ import GoodList from '../components/pages/GoodList/Good.vue'
 import mine from '../components/pages/my/Xmain.vue'
 import emportCar from '../components/pages/shopingcar/Shopcar.vue'
 import Detail from '../components/pages/Detail/Detail.vue'
+import login from '../components/pages/my/login.vue'
+import user from '../components/pages/my/user.vue'
+import I from '../components/pages/my/I.vue'
 const router = new VueRouter({
   routes: [
     {
@@ -34,11 +36,23 @@ const router = new VueRouter({
         path: 'mine',
         component: mine,
         name: 'mine'
+      },{
+        path: 'login',
+        component: login,
+        name: 'login'
+      },{
+        path: 'user',
+        component: user,
+        name: 'user'
       }]
     },
     {
       path: '/detail',
       component: Detail
+    },
+    {
+      path: '/i',
+      component: I
     },
     // 重定向
     {

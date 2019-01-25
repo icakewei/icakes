@@ -9,7 +9,6 @@
 
         </ul>
         <i class="fa fa-caret-right jiantou" aria-hidden="true" ></i>
-    <!-- Add Pagination -->
           <div class="swiper-pagination"></div>
       </div>
          
@@ -48,7 +47,7 @@ export default{
       initSwiper(){
          var swiper = new Swiper('.swiper-container', {
           slidesPerView: 4,
-          // spaceBetween: 5,
+          spaceBetween: 5,
           freeMode: true,
           pagination: {
             el: '.swiper-pagination',
@@ -61,42 +60,27 @@ export default{
         // console.log(this.selInit)
 
       },
-      leave(){
-
-      }
     },
-    //  beforeRouteLeave(to, from, next) {
-    //    if (from.path == "/detail") {
-    //     from.meta.keepAlive = true;
-    //   } else {
-    //     from.meta.keepAlive = false;
-    //   }
-    //   next();
-    // },
     created(){
         if(this.$route.params.path){
           this.selInit=this.$route.params.path;
         }else if(this.$route.params.total){
           this.selInit=this.$route.params.total;
-          console.log(this.selInit)
-          // console.log(0)
         }else if(!this.$route.params.total){
           let storage = window.localStorage;
           // console.log(0)
           this.selInit=storage.getItem('tabname');
         }else{
-          console.log(852)
               this.selInit='http://icak.es/api/v1/type/view?handle=bdcakes&token=9dd5934c294149a8aaba5a3540d7f709&rnd=1542713382991'
         }
       },
       activated(){
-        // console.log('hhhh')
         if(this.$route.params.path){
         this.selInit=this.$route.params.path;
         console.log(this.selInit)
       }else if(this.$route.params.total){
         this.selInit=this.$route.params.total;
-        console.log(this.selInit)
+        // console.log(this.selInit)
         // console.log(0)
       }else if(!this.$route.params.total){
         let storage = window.localStorage;
@@ -107,15 +91,12 @@ export default{
       selInit:function(newval,oldval){
         let storage = window.localStorage;
         storage.setItem('tabname', this.selInit);
-        console.log(storage.getItem('tabname'))
+        // console.log(storage.getItem('tabname'))
       }
     },
     mounted(){
     this.initSwiper()
     }
-
-
-    
 } 
 
 </script>
@@ -124,7 +105,6 @@ export default{
 @import url('../../../../node_modules/swiper/dist/css/swiper.min.css');
 @import url(../../../styls/main.less);
 #Home {
-  // .margin(45,0,50,0);
   .padding(45,0,0,0);
   .home_nav{
     .jiantou{
@@ -134,10 +114,7 @@ export default{
       .fs(20);
     }
      ul{
-       // .w(350);
-       // margin: 0px auto;
       li{
-        // .w(84);
         .h(29);
           margin: 0 auto;
           color: #666;
@@ -152,16 +129,14 @@ export default{
         border-bottom:2px solid #000;
         color:#000;
       }
-      
      }
    }
    .list{
     .margin(0,0,51,0);
       img{
-      // .w(318);
-      .h(150);
-          text-align: center;
-    }
+        .h(150);
+        width: 100%;
+      }
    } 
 }
 </style>

@@ -86,7 +86,7 @@ export default {
     // this.getData()
     // console.log(this.$route.params.total);
     // this.path=this.$route.params.total;
-    console.log("createdhh");
+    // console.log("createdhh");
   },
   // homeList:function(newVal,oldVal){
   //   if(this.homeList !=[]){
